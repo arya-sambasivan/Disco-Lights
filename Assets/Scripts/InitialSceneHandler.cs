@@ -37,8 +37,8 @@ public class InitialSceneHandler : MonoBehaviour
         }
         if (int.Parse(inputC) >= 2 && int.Parse(inputC) <= 10 && int.Parse(inputR) >= 2 && int.Parse(inputR) <= 10)
         {
-            Inputs.rowSize = int.Parse(inputR);
-            Inputs.coloumnSize = int.Parse(inputC);
+            Inputs.rowSize = int.Parse(inputC);
+            Inputs.coloumnSize = int.Parse(inputR);
             SceneManager.LoadScene("GamePlay");
         }
     }
