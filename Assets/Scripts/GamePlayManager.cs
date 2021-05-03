@@ -23,15 +23,12 @@ public class GamePlayManager : MonoBehaviour
     [SerializeField] GameObject gameEndUI;
     void Start()
     {
+        gridSizeX = Inputs.rowSize;
+        gridSizeY = Inputs.coloumnSize;
         ArrangeGrid();
         Totalcount = gridSizeX * gridSizeY;
     }
 
-    // Update is called once per frame 
-    void Update()
-    {
-        
-    }
     private void ArrangeGrid()
     {
         gridArray = new GameObject[gridSizeX, gridSizeY];
@@ -164,7 +161,7 @@ public class GamePlayManager : MonoBehaviour
         }
         deadCellList.RemoveRange(0, deadCellList.Count);
         checkforGameEnd();
-        
+        StopCoroutine("updateDeadCells");
     }
 
     private void checkforGameEnd()

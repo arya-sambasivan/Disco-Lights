@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class InitialSceneHandler : MonoBehaviour
 {
 
-    string inputR;
-    string inputC;
+    public string inputR;
+    public string inputC;
     public GameObject inputRow;
     public GameObject inputColoumn;
     public GameObject CheckforRowValue;
@@ -33,11 +33,12 @@ public class InitialSceneHandler : MonoBehaviour
         }
         if(int.Parse(inputC) < 2 || int.Parse(inputC) > 10)
         {
-            Debug.Log(" dfsrgdfgfdgsra" + int.Parse(inputC));
             CheckforColValue.GetComponent<Text>().text = "value range = 2 - 10";
         }
-        if (int.Parse(inputC) >= 2 && int.Parse(inputC) <= 10)
+        if (int.Parse(inputC) >= 2 && int.Parse(inputC) <= 10 && int.Parse(inputR) >= 2 && int.Parse(inputR) <= 10)
         {
+            Inputs.rowSize = int.Parse(inputR);
+            Inputs.coloumnSize = int.Parse(inputC);
             SceneManager.LoadScene("GamePlay");
         }
     }

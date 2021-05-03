@@ -13,16 +13,8 @@ public class CellHandler : MonoBehaviour
         gamePlayManagerInstance = FindObjectOfType<GamePlayManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-    }
-
     public void OnMouseDown()
     {
-        Debug.Log("button clicked");
         currentCelltatus = cellStatus.SELECTED;
         GetComponent<SpriteRenderer>().color = Color.yellow;
         GetComponent<BoxCollider2D>().enabled = false;
